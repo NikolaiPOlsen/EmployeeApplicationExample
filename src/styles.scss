@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --color-nav: #161717;
+    --color-nav-text: #f5f5f5;
+    --color-body: #f7f4ee;
+    --color-card-background: #edebe6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-body);
+}
+
+.card {
+    max-width: 800px;
+    background-color: var(--color-card-background);
+    border-radius: 14px;
+    margin: 20px;
+    padding: 20px;
+    width: fill-available;
+    min-width: 450px;
+}

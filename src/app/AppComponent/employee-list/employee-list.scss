@@ -1,0 +1,16 @@
+:host .employee-list-text {
+    display: flex;
+    list-style-type: none;
+    padding-left: 1rem;
+}
+:host li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 5px;
+}
+:host .button-container {
+    display:flex;
+    align-items: center;
+    gap: 1rem;
+}

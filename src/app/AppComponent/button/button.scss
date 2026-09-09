@@ -1,0 +1,11 @@
+:host .btn-primary {
+    color: var(--color-nav-text);
+    background-color: var(--color-nav);
+    border: none;
+    border-radius: 14px;
+}
+
+:host .btn-primary h3 {
+    margin: 0;
+    padding: 10px 20px;
+}

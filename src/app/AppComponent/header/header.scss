@@ -1,0 +1,13 @@
+:host .nav-bar {
+    display: flex;
+    width: 100%;
+    background-color: var(--color-nav);
+    text-align: center;
+}
+
+:host .nav-text li{
+    display: inline;
+    color: var(--color-nav-text);
+    padding: 10px;
+    list-style: none;
+}

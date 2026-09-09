@@ -1,0 +1,22 @@
+:host .employee-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fill;
+    padding: 20px;
+    max-width: 450px;
+}
+
+:host .employee-form input {
+    margin-bottom: 10px;
+    border-radius: 14px;
+    border: none;
+    padding: 10px;
+}
+
+:host .employee-form select {
+    margin-bottom: 10px;
+    border-radius: 14px;
+    border: none;
+    padding: 10px;
+}

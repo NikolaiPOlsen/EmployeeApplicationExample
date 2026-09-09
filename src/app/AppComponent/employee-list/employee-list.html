@@ -1,0 +1,23 @@
+<h3>List of employees:</h3>
+
+<ul class="employee-list-text">
+    <div class="employee-list-container">
+        @for (employee of recieveEmployeeList; track employee.id) {
+            <li>
+                <div>
+                    {{ employee.id }} - 
+                    {{ employee.name }} - 
+                    {{ employee.email }} - 
+                    {{ employee.department }} - 
+                    {{ employee.role }} - 
+                    {{ employee.status }}
+                </div>
+                <div class="button-container">
+                    <app-button buttonText="Remove" (click)="handleEmployeeRemove(employee.id)"></app-button>
+                    <app-button buttonText="Edit" (click)="handleEmployeeUpdate(employee.id)"></app-button>
+                    <!--<button class="btn-primary" (click)="employeeDataService.updateEmployee(employee.id)">Update</button>-->
+                </div>
+            </li>
+        }
+    </div>
+</ul>
