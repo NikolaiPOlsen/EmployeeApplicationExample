@@ -48,9 +48,8 @@ export class EmployeeForm implements OnInit, OnChanges{
   onSubmit() {
     console.log(this.employeeForm.value)
     console.log(this.employeeForm.valid)
-    console.log(this.employeeForm.reset())
 
-    const formValue = this.employeeForm.value
+    const formValue = this.employeeForm.getRawValue();
     console.log(formValue.name)
     formValue.id = this.employeeDataService.generateEmployeeId();
 
@@ -66,6 +65,7 @@ export class EmployeeForm implements OnInit, OnChanges{
     const employeeList = this.employeeDataService.getEmployeeListData()
     const list = this.employeeDataService.returnList();
     this.getEmployeeList.emit(list);
+    this.employeeForm.reset();
 
   }
   
@@ -76,6 +76,7 @@ export class EmployeeForm implements OnInit, OnChanges{
   updateFormWithEmployeeData(selectedEmployee: EmployeeData) {
     this.employeeToEdit 
     this.employee = {... selectedEmployee};
+    console.log(selectedEmployee)
     this.employeeForm.patchValue(
       {
         name: this.employee.name,
@@ -93,6 +94,8 @@ export class EmployeeForm implements OnInit, OnChanges{
     //});
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    if (changes['employeeToEdit'] && this.employeeToEdit) {
+    this.updateFormWithEmployeeData(this.employeeToEdit);
   }
+}
 }
