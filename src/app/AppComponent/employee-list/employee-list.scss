@@ -2,6 +2,8 @@
     display: flex;
     list-style-type: none;
     padding-left: 1rem;
+    overflow: scroll;
+    max-height: 350px;
 }
 :host li {
     display: flex;
