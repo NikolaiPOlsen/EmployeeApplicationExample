@@ -1,6 +1,6 @@
 :host .btn-primary {
-    color: var(--color-nav-text);
-    background-color: var(--color-nav);
+    color: "colorText";
+    background-color: "bgColor";
     border: none;
     border-radius: 14px;
 }
@@ -8,4 +8,10 @@
 :host .btn-primary h3 {
     margin: 0;
     padding: 10px 20px;
+}
+
+:host .btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
