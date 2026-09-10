@@ -9,7 +9,7 @@ import { EmployeeList } from '../employee-list/employee-list';
   templateUrl: './employee-card.html',
 })
 export class EmployeeCard {
-  employeeIdToUpdate: any = []
+  employeeToUpdate: any = []
   listOfEmployee: any = [];
   handleEmployeeList(list: any) {
     console.log(list);
