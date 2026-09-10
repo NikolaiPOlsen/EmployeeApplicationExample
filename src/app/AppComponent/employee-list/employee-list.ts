@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, Input, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input, OnChanges, SimpleChanges, EventEmitter, Output } from '@angular/core';
 import { EmployeeDataService } from '../../employee.data.service';
 import { Button } from "../button/button";
 import { EmployeeData } from '../../employee-data';
@@ -14,6 +14,8 @@ import { CommonModule } from '@angular/common';
 })
 
 export class EmployeeList implements OnInit, OnChanges, OnDestroy {
+
+@Output() employeeSelectedForEdit = new EventEmitter<EmployeeData>();
 @Input() recieveEmployeeList: any;
 
   employees: EmployeeData[] = [];
@@ -40,7 +42,10 @@ export class EmployeeList implements OnInit, OnChanges, OnDestroy {
   }
 
   handleEmployeeUpdate(id: number) {
-    this.employeeDataService.updateEmployee(id);
+    const employee = this.employeeDataService.findEmployee(id);
+    if (employee) {
+      this.employeeSelectedForEdit.emit(employee);
+    }
     console.log(id)
   }
 
