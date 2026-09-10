@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EmployeeDataService } from '../../employee.data.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl, ReactiveFormsModule, FormGroup, Validators, RequiredValidator } from '@angular/forms';
 import { EmployeeData } from '../../employee-data';
 import { Button } from "../button/button";
 import { Subscription } from 'rxjs';
@@ -9,13 +9,21 @@ import { Subscription } from 'rxjs';
 
 
 @Component({
-  imports: [FormsModule, Button],
+  imports: [FormsModule, Button, ReactiveFormsModule],
   selector: 'app-employee-form',
   styleUrl: './employee-form.scss',
   templateUrl: './employee-form.html',
 })
 export class EmployeeForm implements OnInit{
   private employeeSub!: Subscription;
+
+  employeeForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    role: new FormControl('', Validators.required),
+    department: new FormControl('', Validators.required),
+    status: new FormControl('Active'),
+  }); 
 
   employee: EmployeeData = {
     id: 0,
@@ -62,6 +70,15 @@ export class EmployeeForm implements OnInit{
       department: this.employee.department,
       status: this.employee.status
     }
+    this.employeeForm.patchValue(
+      {
+        name: this.employee.name,
+        email: this.employee.email,
+        role: this.employee.role,
+        department: this.employee.department,
+        status: this.employee.status,
+      }
+    )
   }
 
   ngOnInit(): void {
