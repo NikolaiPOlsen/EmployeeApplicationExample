@@ -13,7 +13,7 @@
                     {{ employee.status }}
                 </div>
                 <div class="button-container">
-                    <app-button buttonText="Remove" (click)="handleEmployeeRemove(employee.id)"></app-button>
+                    <app-button buttonText="Remove" bgColor="#cf0000" (click)="handleEmployeeRemove(employee.id)"></app-button>
                     <app-button buttonText="Edit" (click)="handleEmployeeUpdate(employee.id)"></app-button>
                     <!--<button class="btn-primary" (click)="employeeDataService.updateEmployee(employee.id)">Update</button>-->
                 </div>
