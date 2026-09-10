@@ -40,7 +40,8 @@ export class EmployeeList implements OnInit, OnChanges, OnDestroy {
   }
 
   handleEmployeeUpdate(id: number) {
-    this.employeeDataService.findEmployee(id);
+    this.employeeDataService.updateEmployee(id);
+    console.log(id)
   }
 
   ngOnDestroy(): void {
