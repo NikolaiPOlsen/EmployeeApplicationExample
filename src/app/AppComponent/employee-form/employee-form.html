@@ -1,19 +1,19 @@
 <h3>Employee form:</h3>
-    <form class="employee-form"[formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <form class="employee-form" [formGroup]="employeeForm">
         <label name="name">Name:</label>
-        <input placeholder="Robert Johnson" FormControlName="name" name="name" required>
+        <input placeholder="Robert Johnson" formControlName="name" name="name">
     
         <label name="email">Email:</label>
-        <input placeholder="user@example.com" FormControlName="email" name="email" required>
+        <input placeholder="user@example.com" formControlName="email" name="email">
 
         <label name="department">Department:</label>
-        <input placeholder="IT" FormControlName="department" name="department" required>
+        <input placeholder="IT" formControlName="department" name="department">
 
         <label name="role">Role:</label>
-        <input placeholder="Technician" FormControlName="role" name="role" required>
+        <input placeholder="Technician" formControlName="role" name="role">
 
         <label name="status">Status:</label>
-        <select name="status" FormControlName="status" required>
+        <select name="status" formControlName="status">
             <option value="Active" >Active</option>
             <option value="Inactive">Inactive</option>
             <option value="On Leave">On Leave</option>
