@@ -4,5 +4,5 @@ export interface EmployeeData {
     email: string;
     department: string;
     role: string;
-    status: 'Active' | 'Inactive' | 'On Leave';
+    status: string;
 }
