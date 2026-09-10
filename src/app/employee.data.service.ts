@@ -60,14 +60,14 @@ import { BehaviorSubject, map } from 'rxjs';
         this.employeeList = updatedList
         console.log(this.employeeList)
     }
-    updateEmployee(id: number) {
+    findEmployee(id: number) {
         
-        const currentList = this.employeesListSubject.value;
+        //const currentList = this.employeesListSubject.value;
 
-        const currentEmployee = currentList.find(employee => employee.id === id);
+        const currentEmployee = this.employeeList.find(employee => employee.id === id);
+        console.log(currentEmployee);
+        return currentEmployee;
 
-        console.log(currentEmployee)
-
-        this.employeeUpdateSubject.next(currentEmployee ?? null)
+        //this.employeeUpdateSubject.next(currentEmployee ?? null)
     }
 }
