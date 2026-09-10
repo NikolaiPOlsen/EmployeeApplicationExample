@@ -1,9 +1,9 @@
 <div class="employee-card-container">
     <div class="card">
-        <app-employee-form (getEmployeeList)="handleEmployeeList($event)" [employeeToEdit]="employeeIdToUpdate"></app-employee-form>
+        <app-employee-form (getEmployeeList)="handleEmployeeList($event)" [employeeToEdit]="employeeToUpdate"></app-employee-form>
     </div>
 
     <div class="card">
-        <app-employee-list [recieveEmployeeList]="listOfEmployee"></app-employee-list>
+        <app-employee-list [recieveEmployeeList]="listOfEmployee" (employeeSelectedForEdit)="employeeToUpdate = $event"></app-employee-list>
     </div>
 </div>
