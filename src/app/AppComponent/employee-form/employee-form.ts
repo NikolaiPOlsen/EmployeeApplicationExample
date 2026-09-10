@@ -54,15 +54,15 @@ export class EmployeeForm implements OnInit, OnChanges{
     console.log(formValue.name)
     formValue.id = this.employeeDataService.generateEmployeeId();
 
-    const employee: EmployeeData = {
-      id: this.employeeDataService.generateEmployeeId(),
-      name: formValue.name,
-      email: formValue.email,
-      role: formValue.role,
-      department: formValue.department,
-      status: formValue.status,
-    };
-    this.employeeDataService.addEmployee(employee);
+    // const employee: EmployeeData = {
+    //   id: this.employeeDataService.generateEmployeeId(),
+    //   name: formValue.name,
+    //   email: formValue.email,
+    //   role: formValue.role,
+    //   department: formValue.department,
+    //   status: formValue.status,
+    // };
+    this.employeeDataService.addEmployee(formValue);
     const employeeList = this.employeeDataService.getEmployeeListData()
     const list = this.employeeDataService.returnList();
     this.getEmployeeList.emit(list);
