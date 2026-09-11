@@ -45,7 +45,9 @@ import { BehaviorSubject, map } from 'rxjs';
         //this.employeesListSubject.next(updatedList);
     }
 
-    returnList() {
+    returnList(searchedFor: string) {
+        const list = this.employeeList
+        const updatedList = list.filter(searchedFor == list)
         return this.employeeList;
     }
 
@@ -69,5 +71,15 @@ import { BehaviorSubject, map } from 'rxjs';
         return currentEmployee;
 
         //this.employeeUpdateSubject.next(currentEmployee ?? null)
+    }
+    updateEmployee(updated: EmployeeData) {
+        const index = this.employeeList.findIndex(employee => employee.id === updated.id)
+        if (index === -1) {
+        throw Error("Id not found or invalid!")
+        }
+        else {
+            this.employeeList[index] = updated;
+            return updated;
+        }
     }
 }
