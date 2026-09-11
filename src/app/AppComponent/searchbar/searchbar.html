@@ -1,0 +1,4 @@
+<form [formGroup]="searchForm">
+    <input class="search-box" placeholder="Search" formControlName="search" >
+    <app-button buttonText="Search" [buttonState]="searchForm.invalid"></app-button>
+</form>
