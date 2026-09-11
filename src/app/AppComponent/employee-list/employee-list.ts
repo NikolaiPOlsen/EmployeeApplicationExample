@@ -4,9 +4,11 @@ import { Button } from "../button/button";
 import { EmployeeData } from '../../employee-data';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { Searchbar } from '../searchbar/searchbar';
+import { IconButton } from '../icon-button/icon-button';
 
 @Component({
-  imports: [Button, CommonModule],
+  imports: [Button, CommonModule, Searchbar, IconButton],
   selector: 'app-employee-list',
   styleUrl: './employee-list.scss',
   templateUrl: './employee-list.html',
