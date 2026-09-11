@@ -84,6 +84,19 @@ export class EmployeeForm implements OnInit, OnChanges{
     )
   }
 
+  handleUpdate() {
+    const formValue = this.employeeForm.getRawValue();
+
+    formValue.id = this.employee.id
+
+    this.employeeDataService.updateEmployee(formValue);
+
+    const updatedList = this.employeeDataService.returnList();
+
+    this.getEmployeeList.emit(updatedList);
+    this.employeeForm.reset();
+  }
+
   ngOnInit(): void {
     //this.employeeForm.get("name")?.valueChanges.subscribe((nameValue) => {console.log(nameValue)});
     //this.employeeSub = this.employeeDataService.getEmployeeUpdateData().subscribe((selectedEmployee: EmployeeData | null) => {
