@@ -1,16 +1,17 @@
 <h3>List of employees:</h3>
+<h5>Total employees: {{recieveEmployeeList.length}}</h5>
 
 <ul class="employee-list-text">
     <div class="employee-list-container">
         @for (employee of recieveEmployeeList; track employee.id) {
             <li>
                 <div>
-                    {{ employee.id }} - 
-                    {{ employee.name }} - 
-                    {{ employee.email }} - 
-                    {{ employee.department }} - 
-                    {{ employee.role }} - 
-                    {{ employee.status }}
+                    ID: {{ employee.id }} -
+                    Name: {{ employee.name }} -
+                    Email: {{ employee.email }} -
+                    Department: {{ employee.department }} -
+                    Role: {{ employee.role }} -
+                    Status: {{ employee.status }}
                 </div>
                 <div class="button-container">
                     <app-button buttonText="Remove" bgColor="#cf0000" (click)="handleEmployeeRemove(employee.id)"></app-button>
