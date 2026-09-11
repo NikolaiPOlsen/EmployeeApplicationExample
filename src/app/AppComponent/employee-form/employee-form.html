@@ -21,7 +21,7 @@
         <!--<button (click)="handleButtonEvent()" [disabled]="employeeForm.invalid">Submit</button>-->
         <div class="button-group">
             <app-button buttonText="Submit" [buttonState]="employeeForm.invalid || submitButtonDisable" (buttonPressed)="handleButtonEvent()"></app-button>
-            <app-button buttonText="Update" [buttonState]="employeeForm.invalid || !updateButtonEnable"></app-button>
+            <app-button buttonText="Update" [buttonState]="employeeForm.invalid || !updateButtonEnable" (buttonPressed)="handleUpdate()"></app-button>
             <app-button buttonText="Cancel" (buttonPressed)="onCancel()"></app-button>
         </div>
         <!--<app-button [buttonText]="buttonText"></app-button>-->
