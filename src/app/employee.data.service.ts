@@ -45,7 +45,7 @@ import { BehaviorSubject, map } from 'rxjs';
         //this.employeesListSubject.next(updatedList);
     }
 
-    returnList(searchedFor: string) {
+    returnList() {
         const list = this.employeeList
         //const updatedList = list.filter(searchedFor == list)
         return this.employeeList;
