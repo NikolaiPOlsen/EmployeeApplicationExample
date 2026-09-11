@@ -22,3 +22,7 @@
     color: var(--color-nav-text);
     text-decoration: none;
 }
+
+:host .nav-bar a:hover {
+    color: var(--color-primary)
+}
