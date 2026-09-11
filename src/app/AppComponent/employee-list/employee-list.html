@@ -1,5 +1,6 @@
 <h3>List of employees:</h3>
 <h5>Total employees: {{recieveEmployeeList.length}}</h5>
+<app-searchbar></app-searchbar>
 
 <ul class="employee-list-text">
     <div class="employee-list-container">
@@ -14,8 +15,8 @@
                     Status: {{ employee.status }}
                 </div>
                 <div class="button-container">
-                    <app-button buttonText="Remove" bgColor="#cf0000" (click)="handleEmployeeRemove(employee.id)"></app-button>
-                    <app-button buttonText="Edit" (click)="handleEmployeeUpdate(employee.id)"></app-button>
+                    <app-icon-button icon="trash" bgColor="#cf0000" (click)="handleEmployeeRemove(employee.id)"></app-icon-button>
+                    <app-icon-button icon="pen" (click)="handleEmployeeUpdate(employee.id)"></app-icon-button>
                     <!--<button class="btn-primary" (click)="employeeDataService.updateEmployee(employee.id)">Update</button>-->
                 </div>
             </li>
