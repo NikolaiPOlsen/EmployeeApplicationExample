@@ -14,11 +14,10 @@ body {
 }
 
 .card {
-    max-width: 800px;
     background-color: var(--color-card-background);
     border-radius: 14px;
     margin: 20px;
     padding: 20px;
-    width: fill-available;
+    width: fit-content;
     min-width: 450px;
 }
