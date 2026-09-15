@@ -5,9 +5,10 @@ import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Searchbar } from '../searchbar/searchbar';
 import { IconButton } from '../icon-button/icon-button';
+import { SearchFilter } from '../search-filter/search-filter';
 
 @Component({
-  imports: [CommonModule, Searchbar, IconButton],
+  imports: [CommonModule, Searchbar, IconButton, SearchFilter],
   selector: 'app-employee-list',
   styleUrl: './employee-list.scss',
   templateUrl: './employee-list.html',
@@ -15,6 +16,8 @@ import { IconButton } from '../icon-button/icon-button';
 })
 
 export class EmployeeList implements OnInit, OnChanges, OnDestroy {
+
+showFilter = false;
 
 @Output() employeeSelectedForEdit = new EventEmitter<EmployeeData>();
 @Input() recieveEmployeeList: any;
@@ -50,6 +53,11 @@ export class EmployeeList implements OnInit, OnChanges, OnDestroy {
     console.log(id)
   }
   onSearch() {
+    this.recieveEmployeeList = this.employeeDataService.returnList();
+  }
+
+  onFilterChange(filter: string[]) {
+    this.employeeDataService.filterEmployee(filter);
     this.recieveEmployeeList = this.employeeDataService.returnList();
   }
 
