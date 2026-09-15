@@ -7,5 +7,6 @@ export const routes: Routes = [
   { path: 'about', loadComponent: () => import('./Pages/about-page/about-page').then(m => m.AboutPage) },
   { path: 'contact', loadComponent: () => import('./Pages/contact-page/contact-page').then(m => m.ContactPage) },
   { path: 'employees', component: EmployeePage},
+  { path: 'posts', loadChildren: () => import('./Pages/posts/posts.routes').then(m => m.postsRoutes) },
     ];
 
