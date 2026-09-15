@@ -1,6 +1,6 @@
 <h3>List of employees:</h3>
 <h5>Total employees: {{recieveEmployeeList.length}}</h5>
-<app-searchbar></app-searchbar>
+<app-searchbar (searchUpdate)="onSearch()"></app-searchbar>
 
 <ul class="employee-list-text">
     <div class="employee-list-container">
