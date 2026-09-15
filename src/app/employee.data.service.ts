@@ -9,15 +9,11 @@ import { BehaviorSubject, map } from 'rxjs';
     export class EmployeeDataService {
     abc: string = "hello";
     public employeeList = mock_employees;
+    private searchTerm: string = '';
     private employeesListSubject = new BehaviorSubject<EmployeeData[]>(mock_employees);
-    private employeeUpdateSubject = new BehaviorSubject<EmployeeData | null>(null);
 
     getEmployeeListData() {
         return this.employeesListSubject.asObservable();
-    }
-
-    getEmployeeUpdateData() {
-        return this.employeeUpdateSubject.asObservable();
     }
 
     generateEmployeeId(): number {
@@ -45,10 +41,14 @@ import { BehaviorSubject, map } from 'rxjs';
         //this.employeesListSubject.next(updatedList);
     }
 
+    setSearchTerm(searchValue: string) {
+        this.searchTerm = searchValue;
+    }
+
     returnList() {
         const list = this.employeeList
-        //const updatedList = list.filter(searchedFor == list)
-        return this.employeeList;
+        const updatedList = list.filter(employee => employee.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
+        return updatedList;
     }
 
     removeEmployee (id: number) {
