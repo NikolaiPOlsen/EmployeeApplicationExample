@@ -1,0 +1,28 @@
+:host .filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+:host .filter-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+:host .filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+:host input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    border: 2px solid var(--color-primary);
+    border-radius: 14px;
+    cursor: pointer;
+}
