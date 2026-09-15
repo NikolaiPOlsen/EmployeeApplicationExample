@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { IconButton } from '../icon-button/icon-button';
 import { EmployeeDataService } from '../../employee.data.service';
@@ -11,23 +11,33 @@ import { EmployeeDataService } from '../../employee.data.service';
 })
 export class Searchbar implements OnInit, OnChanges, OnDestroy {
 
+  @Output() searchTerm = new EventEmitter();
+  @Output() searchUpdate = new EventEmitter();
+
   constructor(
     public employeeDataService: EmployeeDataService) {}
 
   searchForm = new FormGroup ({
-    search: new FormControl('')
+    search: new FormControl('', {nonNullable:true})
   });
 
   handleSearch() {
-    const search = this.searchForm.getRawValue()
-    //this.employeeDataService.returnList()
-    
+    const searchValue = this.searchForm.getRawValue()
+    console.log(searchValue);
 
+    this.searchTerm.emit(searchValue);
+
+    this.employeeDataService.setSearchTerm(searchValue.search);
+    this.searchUpdate.emit("update");
+    console.log(searchValue, "emited")
+
+    //this.searchForm.reset();
   }
   
   ngOnInit(): void {
     //Use this to update the value to retrieve a changing value from form - in this case it's "search value"
-    this.searchForm.get("search")?.valueChanges.subscribe((searchValue) => {console.log(searchValue)});
+    //this.searchForm.get("search")?.valueChanges.subscribe((searchValue) => {console.log(searchValue)});
+    
   }
 
   ngOnChanges(changes: SimpleChanges): void {
