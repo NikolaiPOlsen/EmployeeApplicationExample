@@ -44,4 +44,5 @@ __screenshots__/
 Thumbs.db
 
 #Env
+.env*.local
 .env
