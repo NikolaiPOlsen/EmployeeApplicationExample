@@ -1,7 +1,7 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { EmployeeData } from './employee-data';
 import { employees as mock_employees } from './employee.model';
-import { BehaviorSubject, map } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable (
     {providedIn: 'root'}
@@ -10,6 +10,7 @@ import { BehaviorSubject, map } from 'rxjs';
     abc: string = "hello";
     public employeeList = mock_employees;
     private searchTerm: string = '';
+    private filtered: string[] = [];
     private employeesListSubject = new BehaviorSubject<EmployeeData[]>(mock_employees);
 
     getEmployeeListData() {
@@ -48,7 +49,9 @@ import { BehaviorSubject, map } from 'rxjs';
     returnList() {
         const list = this.employeeList
         const updatedList = list.filter(employee => employee.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
-        return updatedList;
+        const finalList = updatedList.filter(employee => this.filtered.length === 0 || this.filtered.includes(employee.status));
+
+        return finalList;
     }
 
     removeEmployee (id: number) {
@@ -81,5 +84,8 @@ import { BehaviorSubject, map } from 'rxjs';
             this.employeeList[index] = updated;
             return updated;
         }
+    }
+    filterEmployee(filter: string[] = []) {
+        this.filtered = filter;
     }
 }
