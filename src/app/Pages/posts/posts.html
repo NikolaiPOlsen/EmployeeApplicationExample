@@ -1,0 +1,13 @@
+<h2>Posts:</h2>
+<ul>
+    @for (post of posts; track post.id) {
+        <li routerLink="/posts/{{post.id}}">
+            <div class="card">
+                <span class="id">ID: {{ post.id }}</span>
+                <span class="user-id">User ID: {{ post.userId }}</span>
+                <span class="title">Title: {{ post.title }}</span>
+                <span class="body">Body: {{ post.body }}</span>
+            </div>
+        </li>
+    }
+</ul>
