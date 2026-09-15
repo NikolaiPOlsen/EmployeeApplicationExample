@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, Output, EventEmitter, Renderer2 } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { IconButton } from '../icon-button/icon-button';
 import { EmployeeDataService } from '../../employee.data.service';
@@ -14,8 +14,11 @@ export class Searchbar implements OnInit, OnChanges, OnDestroy {
   @Output() searchTerm = new EventEmitter();
   @Output() searchUpdate = new EventEmitter();
 
+  @Output() filterToggle = new EventEmitter();
+
   constructor(
     public employeeDataService: EmployeeDataService) {}
+    
 
   searchForm = new FormGroup ({
     search: new FormControl('', {nonNullable:true})
@@ -32,6 +35,10 @@ export class Searchbar implements OnInit, OnChanges, OnDestroy {
     console.log(searchValue, "emited")
 
     //this.searchForm.reset();
+  }
+  handleFilter() {
+    console.log("Handle filter");
+    this.filterToggle.emit();
   }
   
   ngOnInit(): void {
