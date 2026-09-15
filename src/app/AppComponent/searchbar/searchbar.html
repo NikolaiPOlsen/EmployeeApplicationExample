@@ -1,4 +1,7 @@
-<form class="form-container" [formGroup]="searchForm">
+<form class="form-container" [formGroup]="searchForm" (ngSubmit)="handleSearch()">
     <input class="search-box" placeholder="Search" formControlName="search" >
-    <app-icon-button icon="search" (buttonPressed)="handleSearch()"></app-icon-button>
+    <div class="button-container">
+        <app-icon-button icon="search" (buttonPressed)="handleSearch()"></app-icon-button>
+        <app-icon-button icon="filter" (buttonPressed)="handleFilter() "></app-icon-button>
+    </div>
 </form>
