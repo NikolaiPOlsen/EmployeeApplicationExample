@@ -1,6 +1,6 @@
-<h3>List of employees:</h3>
-<h5>Total employees: {{recieveEmployeeList.length}}</h5>
-<app-searchbar (searchUpdate)="onSearch()"></app-searchbar>
+<h3>List of employees: {{recieveEmployeeList.length}}</h3>
+<app-searchbar (searchUpdate)="onSearch()" (filterToggle)="showFilter = !showFilter"></app-searchbar>
+<app-search-filter (filterChange)="onFilterChange($event)" [hidden]="!showFilter"></app-search-filter>
 
 <ul class="employee-list-text">
     <div class="employee-list-container">
