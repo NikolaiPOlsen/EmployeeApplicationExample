@@ -1,0 +1,41 @@
+:host {
+    display: block;
+    padding: 20px;
+}
+
+:host ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+:host li {
+    list-style: none;
+    
+}
+
+:host .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+:host span {
+    text-wrap: wrap;
+}
+
+:host .card:hover {
+    transform: scale(1.0050);
+    background-color: var(--color-nav);
+    color: var(--color-body);
+}
+
+:host .card:active {
+    opacity: 0.6;
+}
