@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit, Input, OnChanges, SimpleChanges, EventEmitter, Output } from '@angular/core';
 import { EmployeeDataService } from '../../employee.data.service';
-import { Button } from "../button/button";
 import { EmployeeData } from '../../employee-data';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
@@ -8,7 +7,7 @@ import { Searchbar } from '../searchbar/searchbar';
 import { IconButton } from '../icon-button/icon-button';
 
 @Component({
-  imports: [Button, CommonModule, Searchbar, IconButton],
+  imports: [CommonModule, Searchbar, IconButton],
   selector: 'app-employee-list',
   styleUrl: './employee-list.scss',
   templateUrl: './employee-list.html',
@@ -49,6 +48,9 @@ export class EmployeeList implements OnInit, OnChanges, OnDestroy {
       this.employeeSelectedForEdit.emit(employee);
     }
     console.log(id)
+  }
+  onSearch() {
+    this.recieveEmployeeList = this.employeeDataService.returnList();
   }
 
   ngOnDestroy(): void {
