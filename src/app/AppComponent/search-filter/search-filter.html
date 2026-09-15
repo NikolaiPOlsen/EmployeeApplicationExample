@@ -1,0 +1,19 @@
+<div class="filter-container">
+    <form class="filter-options" [formGroup]="filterForm">
+        <label class="filter-option">
+            <input type="checkbox" formControlName="Active">
+            Active
+        </label>
+
+        <label class="filter-option">
+            <input type="checkbox" formControlName="Inactive">
+            Inactive
+        </label>
+
+        <label class="filter-option">
+            <input type="checkbox" formControlName="On Leave">
+            On leave
+        </label>
+    </form>
+    <app-button buttonText="Apply" (buttonPressed)="filterList()"></app-button>
+</div>
