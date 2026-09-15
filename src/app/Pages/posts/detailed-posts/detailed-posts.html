@@ -1,0 +1,21 @@
+@if (post) {
+    <div class="card post-card">
+        <span class="id">ID: {{ post.id }}</span>
+        <span class="user-id">User ID: {{ post.userId }}</span>
+        <h2 class="title">{{ post.title }}</h2>
+        <p class="body">{{ post.body }}</p>
+    </div>
+}
+
+@if (comments.length) {
+    <h3 class="comments-heading">Comments</h3>
+    <ul class="comments-list">
+        @for (comment of comments; track comment.id) {
+            <li class="card comment-card">
+                <span class="comment-name">{{ comment.name }}</span>
+                <span class="comment-email">{{ comment.email }}</span>
+                <p class="comment-body">{{ comment.body }}</p>
+            </li>
+        }
+    </ul>
+}
