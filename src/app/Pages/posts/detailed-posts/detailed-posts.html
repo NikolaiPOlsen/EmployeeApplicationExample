@@ -1,3 +1,4 @@
+<div class="post-container">
 @if (post) {
     <div class="card post-card">
         <span class="id">ID: {{ post.id }}</span>
@@ -5,7 +6,10 @@
         <h2 class="title">{{ post.title }}</h2>
         <p class="body">{{ post.body }}</p>
     </div>
+    <app-icon-button icon="trash" bgColor="#cf0000" (click)="handleDelete(post.id)"></app-icon-button>
+    <app-icon-button icon="pen" (click)="handleUpdate(post.id)"></app-icon-button>
 }
+</div>
 
 @if (comments.length) {
     <h3 class="comments-heading">Comments</h3>
