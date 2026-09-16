@@ -63,14 +63,12 @@ import { BehaviorSubject } from 'rxjs';
 
         const updatedList = this.employeeList.filter(employee => employee.id !== id)
         this.employeeList = updatedList
-        console.log(this.employeeList)
     }
     findEmployee(id: number) {
         
         //const currentList = this.employeesListSubject.value;
 
         const currentEmployee = this.employeeList.find(employee => employee.id === id);
-        console.log(currentEmployee);
         return currentEmployee;
 
         //this.employeeUpdateSubject.next(currentEmployee ?? null)
