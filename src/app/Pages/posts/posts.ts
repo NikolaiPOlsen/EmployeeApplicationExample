@@ -1,17 +1,19 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ApiService } from './services/api-service';
 import { postsInterface } from './services/posts-interface';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+import { IconButton } from '../../AppComponent/icon-button/icon-button';
 
 @Component({
   selector: 'app-posts',
-  imports: [RouterLink],
+  imports: [RouterLink, IconButton],
   templateUrl: './posts.html',
   styleUrl: './posts.scss',
 })
-export class Posts implements OnInit, OnDestroy{
+export class Posts implements OnInit {
 
   posts: postsInterface[] = [];
+  private router = inject(Router);
 
   constructor (
     private api: ApiService,
@@ -23,10 +25,11 @@ export class Posts implements OnInit, OnDestroy{
     });
   }
 
-  ngOnInit(): void {
-    this.loadPosts();
+  handleNewPost() {
+    this.router.navigate(['posts/new-post']);
   }
 
-  ngOnDestroy(): void {
+  ngOnInit(): void {
+    this.loadPosts();
   }
 }
