@@ -1,4 +1,8 @@
-<h2>Posts:</h2>
+
+<div class="title-container">
+    <h2>Posts:</h2>
+    <app-icon-button icon="new" (click)="handleNewPost()"></app-icon-button>
+</div>
 <ul>
     @for (post of posts; track post.id) {
         <li routerLink="/posts/{{post.id}}">
