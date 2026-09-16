@@ -7,20 +7,6 @@
     max-width: 450px;
 }
 
-:host .employee-form input {
-    margin-bottom: 10px;
-    border-radius: 14px;
-    border: none;
-    padding: 10px;
-}
-
-:host .employee-form select {
-    margin-bottom: 10px;
-    border-radius: 14px;
-    border: none;
-    padding: 10px;
-}
-
 :host .button-group {
     display: flex;
     justify-content: space-between;
