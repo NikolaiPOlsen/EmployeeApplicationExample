@@ -26,18 +26,15 @@ export class Searchbar implements OnInit, OnChanges, OnDestroy {
 
   handleSearch() {
     const searchValue = this.searchForm.getRawValue()
-    console.log(searchValue);
 
     this.searchTerm.emit(searchValue);
 
     this.employeeDataService.setSearchTerm(searchValue.search);
     this.searchUpdate.emit("update");
-    console.log(searchValue, "emited")
 
     //this.searchForm.reset();
   }
   handleFilter() {
-    console.log("Handle filter");
     this.filterToggle.emit();
   }
   
