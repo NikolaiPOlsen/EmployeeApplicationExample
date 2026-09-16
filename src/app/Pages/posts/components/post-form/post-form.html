@@ -1,0 +1,12 @@
+<div class="card">
+    <form class="form-container" [formGroup]="postForm">
+        <label>Title: </label>
+        <input placeholder="Title" formControlName="title">
+
+        <label>Body: </label>
+        <textarea placeholder="Body" formControlName="body"></textarea>
+    </form>
+
+    <app-button buttonText="Create new post" (buttonPressed)="onSubmit()"></app-button>
+
+</div>
