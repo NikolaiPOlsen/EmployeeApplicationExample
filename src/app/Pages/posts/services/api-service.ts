@@ -20,7 +20,20 @@ export class ApiService {
     return this.http.get<postsInterface>(this.apiUrl + 'posts/' + id);
   }
 
-  getSinglePostComments(id:string) {
+  getSinglePostComments(id: string) {
     return this.http.get<commentsInterface[]>(this.apiUrl + 'posts/' + id + '/comments');
+  }
+
+  newPost(post: Pick<postsInterface, 'title' | 'body'>) {
+    return this.http.post<postsInterface>(this.apiUrl + 'posts', post);
+  }
+
+  updatePost(post: Pick<postsInterface, 'title' | 'body'>, id: string) {
+    return this.http.put<postsInterface>(this.apiUrl + 'posts/' + id, post);
+  }
+
+  deletePost(id: string) {
+    console.log("Running deletePost with id:", id);
+    return this.http.delete(this.apiUrl + 'posts/' + id);
   }
 }
