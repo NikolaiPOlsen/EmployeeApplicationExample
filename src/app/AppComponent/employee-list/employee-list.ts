@@ -37,7 +37,6 @@ showFilter = false;
     //})
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
   }
 
   handleEmployeeRemove(id: number) {
@@ -50,7 +49,6 @@ showFilter = false;
     if (employee) {
       this.employeeSelectedForEdit.emit(employee);
     }
-    console.log(id)
   }
   
   onSearch() {
