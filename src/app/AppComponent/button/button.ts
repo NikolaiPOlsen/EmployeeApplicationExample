@@ -17,6 +17,5 @@ export class Button {
 
     handleClick() {
         this.buttonPressed.emit();
-        console.log("Button clicked")
     }
 }
