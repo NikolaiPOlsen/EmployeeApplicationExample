@@ -72,7 +72,6 @@ export class EmployeeForm implements OnInit, OnChanges{
     
     this.employeeToEdit 
     this.employee = {... selectedEmployee};
-    console.log(selectedEmployee)
     this.employeeForm.patchValue(
       {
         name: this.employee.name,
