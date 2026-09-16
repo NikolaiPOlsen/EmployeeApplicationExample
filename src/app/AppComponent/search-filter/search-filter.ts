@@ -25,6 +25,5 @@ export class SearchFilter {
       .map(([key]) => key);
 
       this.filterChange.emit(checked);
-      console.log(checked);
   }
 }
