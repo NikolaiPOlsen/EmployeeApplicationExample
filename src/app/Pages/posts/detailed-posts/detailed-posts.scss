@@ -5,6 +5,11 @@
     padding: 20px;
 }
 
+:host .post-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 :host .post-card {
     display: flex;
     flex-direction: column;
