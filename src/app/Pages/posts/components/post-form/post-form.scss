@@ -1,0 +1,25 @@
+:host .form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+:host label {
+    font-size: 18px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+:host .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:host textarea {
+    width: fit-content;
+    min-width: 450px;
+    min-height: 300px;
+    border-radius: 14px;
+    border: none;
+    padding: 10px;
+}
