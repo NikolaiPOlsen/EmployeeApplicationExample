@@ -16,8 +16,6 @@ export class IconButton {
     buttonPressed = new EventEmitter();
 
     handleClick() {
-      console.log(this.buttonState)
         this.buttonPressed.emit();
-        console.log("Button clicked")
     }
 }
