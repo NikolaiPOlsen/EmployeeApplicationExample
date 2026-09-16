@@ -13,7 +13,6 @@ export class EmployeeCard {
   employeeToUpdate: EmployeeData | null = null;
   listOfEmployee: any = [];
   handleEmployeeList(list: any) {
-    console.log(list);
 
     this.listOfEmployee = list;
   }
