@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Button } from "../../app-components/button/button";
 import { RouterLink } from '@angular/router';
+import { ButtonsModule } from '../../app-components/buttons/buttons.module';
 
 @Component({
-  imports: [Button, RouterLink],
+  imports: [ButtonsModule, RouterLink],
   selector: 'app-home-page',
   styleUrl: './home-page.scss',
   templateUrl: './home-page.html',
