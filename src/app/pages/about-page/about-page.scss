@@ -1,3 +1,30 @@
-:host p {
-    padding: 20px;
+:host .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 60px 20px;
+}
+
+:host .about-section h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.2px;
+    margin-bottom: 10px;
+}
+
+:host .about-card {
+    text-align: left;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+:host .about-card p {
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+:host .about-card p:last-child {
+    margin-bottom: 0;
 }
