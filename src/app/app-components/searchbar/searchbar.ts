@@ -1,13 +1,13 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges, Output, EventEmitter, Renderer2 } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
-import { IconButton } from '../icon-button/icon-button';
+import { IconButton } from '../buttons/icon-button/icon-button';
 import { EmployeeDataService } from '../../employee.data.service';
 
 @Component({
   selector: 'app-searchbar',
-  imports: [IconButton, ReactiveFormsModule],
   templateUrl: './searchbar.html',
   styleUrl: './searchbar.scss',
+  standalone: false,
 })
 export class Searchbar implements OnInit, OnChanges, OnDestroy {
 
