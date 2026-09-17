@@ -1,4 +1,4 @@
-<h3>List of employees: {{recieveEmployeeList.length}}</h3>
+<h2>List of employees: {{recieveEmployeeList.length}}</h2>
 <app-searchbar (searchUpdate)="onSearch()" (filterToggle)="showFilter = !showFilter"></app-searchbar>
 <app-search-filter (filterChange)="onFilterChange($event)" [hidden]="!showFilter"></app-search-filter>
 
