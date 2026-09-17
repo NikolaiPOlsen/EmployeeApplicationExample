@@ -1,13 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
-import { Button } from '../button/button';
+import { Button } from '../buttons/button/button';
 
 @Component({
   selector: 'app-search-filter',
-  imports: [Button, ReactiveFormsModule],
   templateUrl: './search-filter.html',
   styleUrl: './search-filter.scss',
+  standalone: false,
 })
+
 export class SearchFilter {
 
   @Output() filterChange = new EventEmitter<string[]>();

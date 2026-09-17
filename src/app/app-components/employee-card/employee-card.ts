@@ -4,10 +4,10 @@ import { EmployeeList } from '../employee-list/employee-list';
 import { EmployeeData } from '../../employee-data';
 
 @Component({
-  imports: [EmployeeForm, EmployeeList],
   selector: 'app-employee-card',
   styleUrl: './employee-card.scss',
   templateUrl: './employee-card.html',
+  standalone: false,
 })
 export class EmployeeCard {
   employeeToUpdate: EmployeeData | null = null;

@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-icon-button',
   styleUrl: './icon-button.scss',
   templateUrl: './icon-button.html',
+  standalone: false,
 })
+
 export class IconButton {
   @Input() icon: string = 'icon';
   @Input() bgColor: string = 'var(--color-nav)';

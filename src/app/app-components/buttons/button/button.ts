@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-button',
   styleUrl: './button.scss',
   templateUrl: './button.html',
+  standalone: false,
 })
+
 export class Button {
   @Input() buttonText: string = 'Hello';
   @Input() bgColor: string = 'var(--color-nav)';

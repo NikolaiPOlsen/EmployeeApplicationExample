@@ -1,15 +1,15 @@
 import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { EmployeeDataService } from '../../employee.data.service';
-import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EmployeeData } from '../../employee-data';
-import { Button } from "../button/button";
 
 @Component({
-  imports: [Button, ReactiveFormsModule],
   selector: 'app-employee-form',
   styleUrl: './employee-form.scss',
   templateUrl: './employee-form.html',
+  standalone: false,
 })
+
 export class EmployeeForm implements OnInit, OnChanges{
   updateButtonEnable: boolean = false;
   submitButtonDisable: boolean = false;
@@ -94,6 +94,9 @@ export class EmployeeForm implements OnInit, OnChanges{
 
     this.getEmployeeList.emit(updatedList);
     this.employeeForm.reset();
+    
+    this.submitButtonDisable = false;
+    this.updateButtonEnable = false;
   }
 
   ngOnInit(): void {

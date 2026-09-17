@@ -4,15 +4,14 @@ import { EmployeeData } from '../../employee-data';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Searchbar } from '../searchbar/searchbar';
-import { IconButton } from '../icon-button/icon-button';
+import { IconButton } from '../buttons/icon-button/icon-button';
 import { SearchFilter } from '../search-filter/search-filter';
 
 @Component({
-  imports: [CommonModule, Searchbar, IconButton, SearchFilter],
   selector: 'app-employee-list',
   styleUrl: './employee-list.scss',
   templateUrl: './employee-list.html',
-  standalone: true,
+  standalone: false,
 })
 
 export class EmployeeList implements OnInit, OnChanges, OnDestroy {
