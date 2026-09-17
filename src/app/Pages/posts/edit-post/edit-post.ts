@@ -1,8 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, Output } from '@angular/core';
 import { PostForm } from '../components/post-form/post-form';
 import { ApiService } from '../services/api-service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { postsInterface } from '../services/posts-interface';
+import { PopUpService } from '../../../AppComponent/pop-up/services/pop-up-service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-edit-post',
@@ -19,18 +21,28 @@ export class EditPost implements OnInit {
   constructor (
     private api: ApiService,
     private route: ActivatedRoute,
+    private popUpService: PopUpService,
   ) {}
 
   handleUpdate(value: {title: string, body: string}) {
     this.api.updatePost(value, this.id).subscribe({
-      next: (post) => console.log('Updated post: ', post)
+      next: (post) => {
+        this.router.navigate(['/posts']);
+      },
+      error: (err: HttpErrorResponse) => {
+        this.popUpService.isOpen(`Update failed: (error ${err.status})`, 'Could not save your changes. Please try again.');
+      },
     })
-    this.router.navigate(['/posts']);
   }
 
   getPostData(id: string) {
     this.api.getSinglePost(id).subscribe({
-      next: (post) => this.post = post,
+      next: (post) => {
+        this.post = post
+      },
+      error: (err: HttpErrorResponse) => {
+        this.popUpService.isOpen(`Retreaving post failed: (error ${err.status})`, 'Could not retreave the post. Please try again.');
+      },
     })
   }
 
