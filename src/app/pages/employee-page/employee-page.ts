@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EmployeeCard } from '../../AppComponent/employee-card/employee-card';
+import { EmployeeCard } from '../../app-components/employee-card/employee-card';
 
 @Component({
   imports: [ EmployeeCard],

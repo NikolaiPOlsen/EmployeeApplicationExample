@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomePage } from './Pages/home-page/home-page';
-import { EmployeePage } from './Pages/employee-page/employee-page';
+import { HomePage } from './pages/home-page/home-page';
+import { EmployeePage } from './pages/employee-page/employee-page';
 
 export const routes: Routes = [
   { path: '', component: HomePage},
-  { path: 'about', loadComponent: () => import('./Pages/about-page/about-page').then(m => m.AboutPage) },
-  { path: 'contact', loadComponent: () => import('./Pages/contact-page/contact-page').then(m => m.ContactPage) },
+  { path: 'about', loadComponent: () => import('./pages/about-page/about-page').then(m => m.AboutPage) },
+  { path: 'contact', loadComponent: () => import('./pages/contact-page/contact-page').then(m => m.ContactPage) },
   { path: 'employees', component: EmployeePage},
-  { path: 'posts', loadChildren: () => import('./Pages/posts/posts.routes').then(m => m.postsRoutes) },
+  { path: 'posts', loadChildren: () => import('./pages/post-pages/posts.routes').then(m => m.postsRoutes) },
     ];
 

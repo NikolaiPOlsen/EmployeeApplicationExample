@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ApiService } from './services/api-service';
 import { postsInterface } from './services/posts-interface';
 import { RouterLink, Router } from '@angular/router';
-import { IconButton } from '../../AppComponent/icon-button/icon-button';
+import { IconButton } from '../../app-components/icon-button/icon-button';
 
 @Component({
   selector: 'app-posts',

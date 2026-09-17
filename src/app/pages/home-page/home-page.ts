@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Button } from "../../AppComponent/button/button";
+import { Button } from "../../app-components/button/button";
 import { RouterLink } from '@angular/router';
 
 @Component({

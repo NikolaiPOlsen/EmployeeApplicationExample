@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../services/api-service';
 import { postsInterface } from '../services/posts-interface';
 import { commentsInterface } from '../services/comments-interface';
-import { IconButton } from '../../../AppComponent/icon-button/icon-button';
+import { IconButton } from '../../../app-components/icon-button/icon-button';
 
 @Component({
   selector: 'app-detailed-posts',

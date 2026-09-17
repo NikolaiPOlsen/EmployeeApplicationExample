@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ApiService } from '../services/api-service';
 import { Router } from '@angular/router';
 import { PostForm } from '../components/post-form/post-form';
-import { PopUpService } from '../../../AppComponent/pop-up/services/pop-up-service';
+import { PopUpService } from '../../../app-components/pop-up/services/pop-up-service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Navbar } from './AppComponent/navbar/navbar';
-import { PopUp } from './AppComponent/pop-up/pop-up';
+import { Navbar } from './app-components/navbar/navbar';
+import { PopUp } from './app-components/pop-up/pop-up';
 
 @Component({
   imports: [RouterOutlet, Navbar, PopUp],

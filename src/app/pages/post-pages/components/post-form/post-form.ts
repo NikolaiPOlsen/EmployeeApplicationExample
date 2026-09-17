@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Button } from '../../../../AppComponent/button/button';
+import { Button } from '../../../../app-components/button/button';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { postsInterface } from '../../services/posts-interface';
 
