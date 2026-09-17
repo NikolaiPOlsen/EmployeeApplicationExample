@@ -1,3 +1,41 @@
-:host p {
-    padding: 20px;
+:host .contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 60px 20px;
+}
+
+:host .contact-section h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.2px;
+    margin-bottom: 10px;
+}
+
+:host .contact-card {
+    text-align: left;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+:host .contact-card p {
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+:host .contact-details {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+:host .contact-details li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+:host .contact-details li:last-child {
+    margin-bottom: 0;
 }
