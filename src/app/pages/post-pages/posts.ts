@@ -3,12 +3,13 @@ import { ApiService } from './services/api-service';
 import { postsInterface } from './services/posts-interface';
 import { RouterLink, Router } from '@angular/router';
 import { ButtonsModule } from '../../app-components/buttons/buttons.module';
+import { PostPageModule } from './modules/post.module';
 
 @Component({
   selector: 'app-posts',
-  imports: [RouterLink, ButtonsModule],
   templateUrl: './posts.html',
   styleUrl: './posts.scss',
+  standalone: false,
 })
 export class Posts implements OnInit {
 
