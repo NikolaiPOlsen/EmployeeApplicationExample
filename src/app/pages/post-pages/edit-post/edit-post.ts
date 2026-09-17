@@ -1,5 +1,4 @@
-import { Component, inject, OnInit, Output } from '@angular/core';
-import { PostForm } from '../components/post-form/post-form';
+import { Component, inject, OnInit } from '@angular/core';
 import { ApiService } from '../services/api-service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { postsInterface } from '../services/posts-interface';
@@ -8,9 +7,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-edit-post',
-  imports: [PostForm],
   templateUrl: './edit-post.html',
   styleUrl: './edit-post.scss',
+  standalone: false,
 })
 export class EditPost implements OnInit {
 
