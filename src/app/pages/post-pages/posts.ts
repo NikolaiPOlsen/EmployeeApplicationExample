@@ -2,11 +2,11 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ApiService } from './services/api-service';
 import { postsInterface } from './services/posts-interface';
 import { RouterLink, Router } from '@angular/router';
-import { IconButton } from '../../app-components/icon-button/icon-button';
+import { ButtonsModule } from '../../app-components/buttons/buttons.module';
 
 @Component({
   selector: 'app-posts',
-  imports: [RouterLink, IconButton],
+  imports: [RouterLink, ButtonsModule],
   templateUrl: './posts.html',
   styleUrl: './posts.scss',
 })
