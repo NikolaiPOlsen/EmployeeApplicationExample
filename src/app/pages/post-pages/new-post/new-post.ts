@@ -1,15 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { ApiService } from '../services/api-service';
 import { Router } from '@angular/router';
-import { PostForm } from '../components/post-form/post-form';
 import { PopUpService } from '../../../app-components/pop-up/services/pop-up-service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-new-post',
-  imports: [PostForm],
   templateUrl: './new-post.html',
   styleUrl: './new-post.scss',
+  standalone: false,
 })
 export class NewPost {
 
