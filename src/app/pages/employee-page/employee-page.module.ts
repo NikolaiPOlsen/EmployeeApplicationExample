@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { EmployeeCard } from '../../app-components/employee-card/employee-card';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeForm } from '../../app-components/employee-form/employee-form';
 import { EmployeeList } from '../../app-components/employee-list/employee-list';
 import { CommonModule } from '@angular/common';
