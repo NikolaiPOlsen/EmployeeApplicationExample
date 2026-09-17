@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { Button } from '../button/button';
 import { PopUpService } from './services/pop-up-service';
+import { ButtonsModule } from '../buttons/buttons.module';
 
 @Component({
   selector: 'app-pop-up',
-  imports: [Button, AsyncPipe],
+  imports: [ButtonsModule, AsyncPipe],
   templateUrl: './pop-up.html',
   styleUrl: './pop-up.scss',
 })
