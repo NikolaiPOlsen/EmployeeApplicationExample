@@ -6,6 +6,8 @@
 :host .title-container {
     display: flex;
     justify-content: space-between;
+    opacity: 0;
+    animation: fade-in-up 0.6s ease-out forwards;
 }
 
 :host ul {
@@ -29,6 +31,20 @@
     align-items: flex-start;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    opacity: 0;
+    animation: fade-in-up 0.6s ease-out 0.15s forwards;
+}
+
+:host li:nth-child(2) .card {
+    animation-delay: 0.2s;
+}
+
+:host li:nth-child(3) .card {
+    animation-delay: 0.25s;
+}
+
+:host li:nth-child(n+4) .card {
+    animation-delay: 0.3s;
 }
 
 :host span {
@@ -43,4 +59,12 @@
 
 :host .card:active {
     opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :host .title-container,
+    :host .card {
+        animation: none;
+        opacity: 1;
+    }
 }
