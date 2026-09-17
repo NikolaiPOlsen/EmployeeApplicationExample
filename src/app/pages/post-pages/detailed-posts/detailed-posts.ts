@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../services/api-service';
 import { postsInterface } from '../services/posts-interface';
 import { commentsInterface } from '../services/comments-interface';
-import { IconButton } from '../../../app-components/icon-button/icon-button';
+import { ButtonsModule } from '../../../app-components/buttons/buttons.module';
 
 @Component({
   selector: 'app-detailed-posts',
-  imports: [IconButton],
+  imports: [ButtonsModule],
   templateUrl: './detailed-posts.html',
   styleUrl: './detailed-posts.scss',
 })
