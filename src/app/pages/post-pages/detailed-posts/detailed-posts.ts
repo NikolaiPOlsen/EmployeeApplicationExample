@@ -7,9 +7,9 @@ import { ButtonsModule } from '../../../app-components/buttons/buttons.module';
 
 @Component({
   selector: 'app-detailed-posts',
-  imports: [ButtonsModule],
   templateUrl: './detailed-posts.html',
   styleUrl: './detailed-posts.scss',
+  standalone: false,
 })
 export class DetailedPosts implements OnInit {
 
