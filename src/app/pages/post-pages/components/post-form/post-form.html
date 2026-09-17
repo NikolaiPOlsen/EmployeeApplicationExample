@@ -7,6 +7,6 @@
         <textarea placeholder="Body" formControlName="body"></textarea>
     </form>
 
-    <app-button buttonText="Create new post" (buttonPressed)="onSubmit()"></app-button>
+    <app-button [buttonState]="postForm.invalid" [buttonText]="buttonText" (buttonPressed)="onSubmit()"></app-button>
 
 </div>
