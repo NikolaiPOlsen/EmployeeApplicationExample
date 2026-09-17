@@ -5,3 +5,19 @@
     flex-wrap: wrap;
 }
 
+:host .employee-card-container .card {
+    opacity: 0;
+    animation: fade-in-up 0.6s ease-out forwards;
+}
+
+:host .employee-card-container .card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :host .employee-card-container .card {
+        animation: none;
+        opacity: 1;
+    }
+}
+
