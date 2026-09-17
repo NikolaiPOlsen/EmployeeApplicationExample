@@ -1,13 +1,12 @@
 import { Component, EventEmitter, Output, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { postsInterface } from '../../services/posts-interface';
-import { ButtonsModule } from '../../../../app-components/buttons/buttons.module';
 
 @Component({
   selector: 'app-post-form',
-  imports: [ButtonsModule, ReactiveFormsModule],
   templateUrl: './post-form.html',
   styleUrl: './post-form.scss',
+  standalone: false,
 })
 export class PostForm implements OnChanges{
 
