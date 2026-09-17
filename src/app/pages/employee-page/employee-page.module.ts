@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { Searchbar } from '../../app-components/searchbar/searchbar';
 import { SearchFilter } from '../../app-components/search-filter/search-filter';
 import { EmployeePage } from './employee-page';
-import { ButtonsModule } from '../../app-components/buttons/buttons.module';
+import { ButtonsModule } from '../../app-components/buttons/modules/buttons.module';
 
 @NgModule({
     declarations: [EmployeeCard, EmployeeForm, EmployeeList, Searchbar, SearchFilter, EmployeePage], //Components, pipes and directives

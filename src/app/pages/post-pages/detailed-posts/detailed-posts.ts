@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../services/api-service';
 import { postsInterface } from '../services/posts-interface';
 import { commentsInterface } from '../services/comments-interface';
-import { ButtonsModule } from '../../../app-components/buttons/buttons.module';
+import { ButtonsModule } from '../../../app-components/buttons/modules/buttons.module';
 
 @Component({
   selector: 'app-detailed-posts',

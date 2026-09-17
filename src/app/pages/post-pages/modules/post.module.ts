@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { PostForm } from '../components/post-form/post-form';
 import { NewPost } from '../new-post/new-post';
 import { EditPost } from '../edit-post/edit-post';
-import { ButtonsModule } from '../../../app-components/buttons/buttons.module';
+import { ButtonsModule } from '../../../app-components/buttons/modules/buttons.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailedPosts } from '../detailed-posts/detailed-posts';
 import { Posts } from '../posts';

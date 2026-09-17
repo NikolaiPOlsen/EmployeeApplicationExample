@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ButtonsModule } from '../../app-components/buttons/buttons.module';
+import { ButtonsModule } from '../../app-components/buttons/modules/buttons.module';
 
 @Component({
   imports: [ButtonsModule, RouterLink],

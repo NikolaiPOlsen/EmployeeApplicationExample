@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ApiService } from './services/api-service';
 import { postsInterface } from './services/posts-interface';
 import { RouterLink, Router } from '@angular/router';
-import { ButtonsModule } from '../../app-components/buttons/buttons.module';
+import { ButtonsModule } from '../../app-components/buttons/modules/buttons.module';
 import { PostPageModule } from './modules/post.module';
 
 @Component({
