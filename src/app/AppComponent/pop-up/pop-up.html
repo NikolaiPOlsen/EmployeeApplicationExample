@@ -1,0 +1,11 @@
+@if (popUp$ | async; as popUp) {
+  @if (popUp.visible) {
+    <div class="pop-up-overlay">
+      <div class="pop-up-card">
+        <h3>{{ popUp.title }}</h3>
+        <p>{{ popUp.message }}</p>
+        <app-button buttonText="Ok" (click)="isClosed()"></app-button>
+      </div>
+    </div>
+  }
+}
